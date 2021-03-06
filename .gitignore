@@ -1,0 +1,8 @@
+*.pyc
+64bit
+lib/
+!lib\requirements.txt
+junk.py
+outputs
+.idea/
+lib64/

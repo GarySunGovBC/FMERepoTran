@@ -1,0 +1,9 @@
+{
+  "source_token": "e036a6f671cb180ac0174cc1d5c0ebc25eb66bdb",
+  "source_fme_server": "ascella.dmz",
+  "dest_fme_server": "gienah.dmz",
+  "api_root": "http://%s/fmerest/v3/",
+  "health_check": "healthcheck?textResponse=false",
+  "list_repos": "repositories?limit=-1&offset=-1&fmetoken=%s",
+  "list_repo_subs": "repositories/<0>/items?fmetoken=%s"
+}
