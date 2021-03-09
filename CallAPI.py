@@ -23,4 +23,4 @@ class CallAPI(object):
         if response.ok:
             return json.loads(response.text)
         msg = json.loads(response.text)
-        raise Exception(msg["message"])
+        raise Exception("Call API failed. server: %s, error:%s" % (self.app_config[self.server], msg["message"]))
