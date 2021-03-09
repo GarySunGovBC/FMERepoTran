@@ -1,9 +1,15 @@
 {
-  "source_token": "e036a6f671cb180ac0174cc1d5c0ebc25eb66bdb",
+  "run_mode": "debug",
+  "source_token": "84ab7256b1a9499e8733cb8b4d39b489ce814970",
+  "dest_token": "54bcbb02703ae2c6abdf6f5fade55612735fd0fb",
   "source_fme_server": "ascella.dmz",
   "dest_fme_server": "gienah.dmz",
   "api_root": "http://%s/fmerest/v3/",
   "health_check": "healthcheck?textResponse=false",
   "list_repos": "repositories?limit=-1&offset=-1&fmetoken=%s",
-  "list_repo_subs": "repositories/<0>/items?fmetoken=%s"
+  "list_repo_subs": "repositories/<0>/items?fmetoken=%s",
+  "list_repo_datasets": "repositories/<0>/items/<1>/datasets/<2>?fmetoken=%s",
+  "get_repo_datasets_info": "repositories/<0>/items/<1>/datasets/<2>/<3>?fmetoken=%s",
+  "list_repo_datasets_features": "repositories/<0>/items/<1>/datasets/<2>/<3>/featuretypes?fmetoken=%s",
+  "get_repo_datasets_feature_info": "repositories/<0>/items/<1>/datasets/<2>/<3>/featuretypes/<4>?fmetoken=%s"
 }

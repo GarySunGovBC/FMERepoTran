@@ -6,3 +6,5 @@ junk.py
 outputs
 .idea/
 lib64/
+/source.repo.txt
+/dest.repo.txt
