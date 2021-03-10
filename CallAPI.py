@@ -10,17 +10,22 @@ class CallAPI(object):
         self.server = server
         self.token = token
 
-    def call_api(self, method, params=None):
-        url = self.app_config["api_root"] % self.app_config[self.server]
-        method = self.app_config[method]
-        if params:
-            for i in range(0, len(params)):
-                method = method.replace("<%s>" % i, params[i])
-        if "token=" in method:
-            method = method % self.token
-        url = os.path.join(url, method)
-        response = requests.get(url)
+    def execute_api(self, url, body):
+        pass
+
+    def api_return(self, response):
+        return json.loads(response.text)
+
+    def call_api(self, method, url_params=None, body=None):
+        root = self.app_config["api_root"] % self.app_config[self.server]
+        url = self.app_config[method]
+        if url_params:
+            url = url % tuple(url_params)
+        if "token=" in url:
+            url = url.replace("token=", "token=" + self.token)
+        url = os.path.join(root, url)
+        response = self.execute_api(url, body)
         if response.ok:
-            return json.loads(response.text)
+            return self.api_return(response)
         msg = json.loads(response.text)
         raise Exception("Call API failed. server: %s, error:%s" % (self.app_config[self.server], msg["message"]))
