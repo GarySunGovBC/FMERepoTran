@@ -8,3 +8,4 @@ outputs
 lib64/
 /source.repo.txt
 /dest.repo.txt
+*.fmw

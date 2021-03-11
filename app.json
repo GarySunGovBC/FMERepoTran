@@ -8,8 +8,8 @@
   "health_check": "healthcheck?textResponse=false",
   "list_repos": "repositories?limit=-1&offset=-1&fmetoken=",
   "get_repo_info": "repositories/%s?fmetoken=",
-  "list_repo_subs": "repositories/%s/items?fmetoken=",
-  "get_repo_sub_item": "repositories/%s/items/%s?fmetoken=",
+  "list_repo_fmws": "repositories/%s/items?fmetoken=",
+  "get_repo_fmw": "repositories/%s/items/%s?fmetoken=",
   "list_repo_datasets": "repositories/%s/items/%s/datasets/%s?fmetoken=",
   "get_repo_datasets_info": "repositories/%s/items/%s/datasets/%s/%s?fmetoken=",
   "list_repo_datasets_features": "repositories/%s/items/%s/datasets/%s/%s/featuretypes?fmetoken=",
@@ -19,5 +19,8 @@
   "list_repo_resources": "repositories/%s/items/%s/resources?fmetoken=",
   "get_repo_resources_info": "repositories/%s/items/%s/resources/%s?fmetoken=",
   "list_repo_services": "repositories/%s/items/%s/services?fmetoken=",
-  "create_repo": "repositories?fmetoken="
+  "create_repo": "repositories?fmetoken=",
+  "delete_repo": "repositories/%s?fmetoken=",
+  "create_fmw": "repositories/%s/items?fmetoken=",
+  "delete_fmw": "repositories/%s/items/%s?fmetoken="
 }

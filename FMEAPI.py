@@ -1,3 +1,5 @@
+import os
+
 from CallAPIDelete import CallAPIDELETE
 from CallAPIGet import CallAPIGET
 from CallAPIPost import CallAPIPOST
@@ -21,7 +23,7 @@ class FmeApis(object):
     def check_health(self):
         """check server if funning good, no token required"""
         return_obj = self.create_api_caller().call_api("health_check")
-        if return_obj["status"] != "ok":
+        if return_obj["text"]["status"] != "ok":
             raise Exception("FME Server is not healthy.")
         return True
 
@@ -39,15 +41,15 @@ class FmeApis(object):
         info = self.create_api_caller().call_api("get_repo_info", [repo_name])
         return info
 
-    def list_repo_sub_items(self, repo_name):
+    def list_repo_fmws(self, repo_name):
         """Retrieves a list of items in the repository. """
-        return_obj = self.create_api_caller().call_api("list_repo_subs", [repo_name])
-        items = return_obj["items"]
+        return_obj = self.create_api_caller().call_api("list_repo_fmws", [repo_name])
+        items = return_obj["text"]["items"]
         return items
 
-    def get_repo_sub_item(self, repo_name, sub_name):
+    def get_repo_fmw(self, repo_name, fmw_name):
         """Retrieves information about a repository item."""
-        item = self.create_api_caller().call_api("get_repo_sub_item", [repo_name, sub_name])
+        item = self.create_api_caller().call_api("get_repo_fmw", [repo_name, fmw_name])
         return item
 
     def get_repo_datasets_info(self, repo_name, fmw_name, dataset_dir, dataset_name):
@@ -106,6 +108,23 @@ class FmeApis(object):
         response = self.create_api_caller("POST").call_api("create_repo", None, repo)
         return response
 
-    def delete_repo(self, repo):
-        response = self.create_api_caller("DELETE").call_api("delete_repo", repo)
+    def delete_repo(self, repo_name):
+        response = self.create_api_caller("DELETE").call_api("delete_repo", [repo_name])
+        return response
+
+    def download_fmw(self, repo_name, fmw_name, file_path):
+        headers = {"Accept": "application/octet-stream"}
+        response = self.create_api_caller().call_api("get_repo_fmw", [repo_name, fmw_name], None, headers)
+        with open(os.path.join(file_path, fmw_name), 'wb') as f:
+            f.write(response["response"].content)
+        return response
+
+    def upload_fmw(self, repo_name, fmw_name, file_path):
+        files = {'file': open(os.path.join(file_path, fmw_name), 'rb')}
+        headers = {"Content-Disposition": "attachment; filename=\"%s\"" % fmw_name, "Accept": "application/json"}
+        response = self.create_api_caller("POST").call_api_upload("create_fmw", files, [repo_name], [200, 201], headers)
+        return response
+
+    def delete_fmw(self, repo_name, fmw_name):
+        response = self.create_api_caller("DELETE").call_api("delete_fmw", [repo_name, fmw_name], [204])
         return response

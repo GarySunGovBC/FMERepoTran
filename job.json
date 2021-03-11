@@ -1,8 +1,8 @@
 {
   "repo_filter": [
+    "BCGW_REP_OTHER",
     "BCGW_CHILD",
     "BCGW_REP_ON_REQUEST",
-    "BCGW_REP_OTHER",
     "BCGW_SCHEDULED",
     "FWA_SUPPORT",
     "GSR_SUPPORT",

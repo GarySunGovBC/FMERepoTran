@@ -1,4 +1,5 @@
 import json
+import os
 
 from ApiException import APIException
 from FMEServerJob import FMEServerJob
@@ -21,18 +22,23 @@ with open(CONFIG) as app_config_json:
 debug = app_config["run_mode"] == "debug"
 try:
     # job = FMEServerJob(app_config, "source")
-    # source_repo = job.list_repo_sub()
+    # source_repos = job.list_repo_fmw()
     job = FMEServerJob(app_config, "dest")
-    #dest_repo = job.list_repo()
-    repo = {'owner': 'admin',
-            'name': 'GARY_TEST_REPO_4',
-            'description': 'This repository is for Gary\'s tests.',
-            'sharable': True
-            }
-    job.create_repo(repo)
-    if debug:
-        pass
-        # save_log(source_repo, "source")
-        # save_log(dest_repo, "dest")
+    # fmw_list = job.list_repo_fmws("GARY_TEST_REPO")
+    # for fmw in fmw_list:
+    #     job.delete_fmw("GARY_TEST_REPO", fmw["name"])
+    # for fn in os.listdir("FMWs"):
+    #     job.upload_fmw("GARY_TEST_REPO", fn, "FMWs")
+    fmw_list = job.list_repo_fmws("GARY_TEST_REPO")
+    for fmw in fmw_list:
+        job.download_fmw("GARY_TEST_REPO", fmw["name"],"download")
+    # for fmw in fmw_list:
+    #     job.delete_fmw("GARY_TEST_REPO", fmw["name"])
+    #     break
+    # # job.delete_repo("GaryTest")
+    # if debug:
+    #     pass
+    # save_log(source_repo, "source")
+    # save_log(dest_repo, "dest")
 except APIException as e:
     print(e.error["message"])
