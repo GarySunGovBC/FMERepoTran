@@ -3,7 +3,10 @@ import json
 
 class APIException(Exception):
 
-    def __init__(self, url, method, response):
+    def __init__(self, url, method=None, response=None):
+        if not method and not response:
+            self.error = {"message": url}
+            return
         self.error = {"url": url, "method": method, "status_code": response.status_code}
         msg = json.loads(response.text)
         text = "No message"

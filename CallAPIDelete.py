@@ -12,5 +12,3 @@ class CallAPIDELETE(CallAPI):
         response = requests.delete(url=url, data=body, headers=headers)
         return response
 
-    def api_return(self, response):
-        return response.text

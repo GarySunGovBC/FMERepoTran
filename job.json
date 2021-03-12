@@ -1,4 +1,5 @@
 {
+  "fmw_dir": "FMWs",
   "repo_filter": [
     "BCGW_REP_OTHER",
     "BCGW_CHILD",
@@ -7,5 +8,6 @@
     "FWA_SUPPORT",
     "GSR_SUPPORT",
     "KIRK"
-  ]
+  ],
+  "overwrite": false
 }

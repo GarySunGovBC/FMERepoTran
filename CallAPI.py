@@ -48,6 +48,3 @@ class CallAPI(object):
         url = self.populate_url(method, url_params)
         response = self.execute_api(url, headers, body)
         return self.check_response(response, url, return_codes)
-
-    def add_header(header):
-        pass
