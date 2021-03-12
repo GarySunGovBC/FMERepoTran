@@ -12,9 +12,6 @@ class CallAPIPOST(CallAPI):
         response = requests.post(url=url, data=body, headers=headers)
         return response
 
-    def api_return(self, response):
-        return response.text
-
     def call_api_upload(self, method, files, url_params=None, return_codes=None, headers=None):
         url = self.populate_url(method, url_params)
         response = requests.post(url=url, headers=headers, files=files)

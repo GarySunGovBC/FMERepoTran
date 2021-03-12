@@ -1,5 +1,6 @@
 import os
 
+from ApiException import APIException
 from CallAPIDelete import CallAPIDELETE
 from CallAPIGet import CallAPIGET
 from CallAPIPost import CallAPIPOST
@@ -33,7 +34,7 @@ class FmeApis(object):
         :return:
         """
         return_obj = self.create_api_caller().call_api("list_repos")
-        items = return_obj["items"]
+        items = return_obj["text"]["items"]
         return items
 
     def get_repo_info(self, repo_name):
@@ -50,7 +51,7 @@ class FmeApis(object):
     def get_repo_fmw(self, repo_name, fmw_name):
         """Retrieves information about a repository item."""
         item = self.create_api_caller().call_api("get_repo_fmw", [repo_name, fmw_name])
-        return item
+        return item["text"]
 
     def get_repo_datasets_info(self, repo_name, fmw_name, dataset_dir, dataset_name):
         """Retrieves information about a dataset associated with a repository item."""
@@ -105,26 +106,37 @@ class FmeApis(object):
         return list_services
 
     def create_repo(self, repo):
+        """Adds a repository to the FME Server instance."""
         response = self.create_api_caller("POST").call_api("create_repo", None, repo)
         return response
 
     def delete_repo(self, repo_name):
+        """Removes a repository and all of its contents."""
         response = self.create_api_caller("DELETE").call_api("delete_repo", [repo_name])
         return response
 
-    def download_fmw(self, repo_name, fmw_name, file_path):
+    def download_fmw(self, repo_name, fmw_name, file_path, overwrite=False):
+        """Downloads a repository item. """
+        fmw_file = os.path.join(file_path, fmw_name)
+        if not overwrite and os.path.exists(fmw_file):
+            raise APIException("File already exists: %s" % fmw_file)
         headers = {"Accept": "application/octet-stream"}
         response = self.create_api_caller().call_api("get_repo_fmw", [repo_name, fmw_name], None, headers)
-        with open(os.path.join(file_path, fmw_name), 'wb') as f:
+        with open(fmw_file, 'wb') as f:
             f.write(response["response"].content)
         return response
 
     def upload_fmw(self, repo_name, fmw_name, file_path):
-        files = {'file': open(os.path.join(file_path, fmw_name), 'rb')}
+        """Uploads an item to a repository. """
+        fmw_file = os.path.join(file_path, fmw_name)
+        if not os.path.exists(fmw_file):
+            raise APIException("File not found: %s" % fmw_file)
+        files = {'file': open(fmw_file, 'rb')}
         headers = {"Content-Disposition": "attachment; filename=\"%s\"" % fmw_name, "Accept": "application/json"}
         response = self.create_api_caller("POST").call_api_upload("create_fmw", files, [repo_name], [200, 201], headers)
         return response
 
     def delete_fmw(self, repo_name, fmw_name):
+        """Removes an item from a repository."""
         response = self.create_api_caller("DELETE").call_api("delete_fmw", [repo_name, fmw_name], [204])
         return response
