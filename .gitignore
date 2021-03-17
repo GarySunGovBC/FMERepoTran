@@ -10,3 +10,4 @@ lib64/
 /dest.repo.txt
 *.fmw
 fmws/
+/secret.json
