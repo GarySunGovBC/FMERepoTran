@@ -1,7 +1,5 @@
 {
   "run_mode": "debug",
-  "source_token": "fb16b4515530b3587a7f07528e3a255c730db127",
-  "dest_token": "9ac67ed0c9152de0cb694c82cc814a45d3c234cc",
   "source_fme_server": "ascella.dmz",
   "dest_fme_server": "gienah.dmz",
   "api_root": "http://%s/fmerest/v3/",

@@ -4,6 +4,7 @@ from datetime import datetime
 
 from ApiException import APIException
 from FMEServerJob import FMEServerJob
+from FMWCompare import FMWCompare
 
 CONFIG = "app.json"
 JOB_CONFIG = "job.json"
@@ -26,7 +27,6 @@ with open(SECRET_CONFIG) as secrect_config_json:
     secrect_config = json.load(secrect_config_json)
 debug = app_config["run_mode"] == "debug"
 try:
-    # raise Exception()
     log({"start at": datetime.now()})
     src_job = FMEServerJob(app_config, secrect_config, "source")
     dest_job = FMEServerJob(app_config, secrect_config, "dest")
@@ -37,29 +37,31 @@ try:
             continue
         if job_config["repo_filter"][repo_name] != "1":
             continue
-
-        # if repo_name != "BCGW_REP_ON_REQUEST":
-        #     continue
-        #
         # print('Transfer Repo "%s". Continue(y/n)?' % repo_name)
         # x = input()
         # if x != 'y':
         #     continue
-        dest_job.create_repo(repo)
+        if not dest_job.repo_exists(repo_name):
+            log("Repository missing in destination: %s." % repo_name)
+            continue
         fmw_list = src_job.list_repo_fmws(repo_name)
-        fmw_dir = job_config["fmw_dir"]
         for fmw in fmw_list:
             fmw_name = fmw["name"]
             full_name = "%s\%s" % (repo_name, fmw_name)
-            print("Transfering %s ..." % full_name)
+            print("Comaring %s ..." % full_name)
             if job_config["fmw_filter"]["on"]:
                 if full_name not in job_config["fmw_filter"]["items"]:
                     continue
-            src_job.download_fmw(repo_name, fmw_name, fmw_dir, True)
+            if not dest_job.fmw_exists(repo_name, fmw_name):
+                log("FMW missing in destination: %s\%s." % (repo_name, fmw_name))
+                continue
+            src_fmw = src_job.get_repo_fmw(repo_name, fmw_name)
+            dest_fmw = dest_job.get_repo_fmw(repo_name, fmw_name)
+            fmw_compare = FMWCompare(src_fmw, dest_fmw)
             try:
-                dest_job.upload_fmw(repo_name, fmw_name, fmw_dir, job_config["overwrite"])
-            except APIException as e:
-                log(e.error["message"])
+                fmw_compare.compare()
+            except Exception as e:
+                log("fmw not equal: %s\%s. reason: %s" % (repo_name, fmw_name, e.error["message"]))
 except APIException as e:
     print(e.error["message"])
     log(e.error["message"])

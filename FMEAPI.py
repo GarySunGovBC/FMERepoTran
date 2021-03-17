@@ -51,7 +51,9 @@ class FmeApis(object):
     def get_repo_fmw(self, repo_name, fmw_name):
         """Retrieves information about a repository item."""
         item = self.create_api_caller().call_api("get_repo_fmw", [repo_name, fmw_name])
-        return item["text"]
+        result = item["text"]
+        result["repositoryName"] = repo_name
+        return result
 
     def get_repo_datasets_info(self, repo_name, fmw_name, dataset_dir, dataset_name):
         """Retrieves information about a dataset associated with a repository item."""
@@ -107,7 +109,8 @@ class FmeApis(object):
 
     def create_repo(self, repo):
         """Adds a repository to the FME Server instance."""
-        response = self.create_api_caller("POST").call_api("create_repo", None, repo)
+        headers = {"Content-Type": "application/x-www-form-urlencoded", "Accept": "application/json"}
+        response = self.create_api_caller("POST").call_api("create_repo", None, None, headers, repo)
         return response
 
     def delete_repo(self, repo_name):
@@ -117,7 +120,7 @@ class FmeApis(object):
 
     def download_fmw(self, repo_name, fmw_name, file_path, overwrite=False):
         """Downloads a repository item. """
-        fmw_file = os.path.join(file_path, fmw_name)
+        fmw_file = os.path.join(file_path, repo_name, fmw_name)
         if not overwrite and os.path.exists(fmw_file):
             raise APIException("File already exists: %s" % fmw_file)
         headers = {"Accept": "application/octet-stream"}
@@ -128,7 +131,7 @@ class FmeApis(object):
 
     def upload_fmw(self, repo_name, fmw_name, file_path):
         """Uploads an item to a repository. """
-        fmw_file = os.path.join(file_path, fmw_name)
+        fmw_file = os.path.join(file_path, repo_name, fmw_name)
         if not os.path.exists(fmw_file):
             raise APIException("File not found: %s" % fmw_file)
         files = {'file': open(fmw_file, 'rb')}

@@ -1,0 +1,101 @@
+{'start at': datetime.datetime(2021, 3, 17, 13, 21, 46, 934919)}
+fmw not equal: BCGW_REP_ON_REQUEST\acdf_diagnostic_facilities_sp_staging_csv_bcgw.fmw. reason: fmw
+fmw not equal: BCGW_REP_ON_REQUEST\adm_area_based_mgmt_plans_sp_staging_gdb_bcgw.fmw. reason: fmw
+fmw not equal: BCGW_REP_ON_REQUEST\adm_bc_parks_regions_sp_staging_gdb_bcgw.fmw. reason: fmw
+fmw not equal: BCGW_REP_ON_REQUEST\adm_bc_parks_sections_sp_staging_gdb_bcgw.fmw. reason: fmw
+fmw not equal: BCGW_REP_ON_REQUEST\adm_college_regions_sp_staging_gdb_bcgw.fmw. reason: fmw
+fmw not equal: BCGW_REP_ON_REQUEST\adm_recreation_districts_sp_staging_gdb_bcgw.fmw. reason: fmw
+fmw not equal: BCGW_REP_ON_REQUEST\adm_recreation_regions_sp_staging_gdb_bcgw.fmw. reason: fmw
+fmw not equal: BCGW_REP_ON_REQUEST\adm_tourism_regions_sp_staging_fgdb_bcgw.fmw. reason: fmw
+fmw not equal: BCGW_REP_ON_REQUEST\aimg_film_roll_hist_index_maps_staging_csv_bcgw.fmw. reason: fmw
+fmw not equal: BCGW_REP_ON_REQUEST\aimg_hist_index_maps_point_staging_shp_bcgw.fmw. reason: fmw
+{'start at': datetime.datetime(2021, 3, 17, 13, 21, 55, 138848)}
+{'start at': datetime.datetime(2021, 3, 17, 13, 22, 23, 474640)}
+{'start at': datetime.datetime(2021, 3, 17, 13, 22, 44, 787728)}
+fmw not equal: BCGW_REP_ON_REQUEST\acdf_diagnostic_facilities_sp_staging_csv_bcgw.fmw. reason: fmw
+{'start at': datetime.datetime(2021, 3, 17, 13, 25, 48, 914165)}
+{'start at': datetime.datetime(2021, 3, 17, 13, 32, 37, 863970)}
+{'start at': datetime.datetime(2021, 3, 17, 13, 37, 28, 398693)}
+fmw not equal: BCGW_SCHEDULED\econ_data_sources_notes_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_elevation_statistics_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_energy_utilities_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_first_nation_band_popltn_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_fn_csds_clabs_bands_xref_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_hazrdous_waste_facilities_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_hazrdous_waste_haulers_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_labour_market_prjctns_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_labour_relations_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_labour_wages_prjctns_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_population_prjctns_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_school_enrollment_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_telecomm_utilities_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_unemplyment_prjctns_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\edrp_mpcm_stats_gemma_multi_xlsx_bcgw.fmw. reason: fileSize
+FMW missing in destination: BCGW_SCHEDULED\gsr_mental_hlth_substce_use_sv_bcdc_csv_bcgw.fmw.
+fmw not equal: BCGW_SCHEDULED\hsp_mjr_mines_permttd_areas_sp_multi_bcgw.fmw. reason: fileSize
+fmw not equal: GSR_SUPPORT\gsr_processMHSU_uploadToCatalogue.fmw. reason: fileSize
+{'start at': datetime.datetime(2021, 3, 17, 13, 42, 33, 225504)}
+fmw not equal: BCGW_SCHEDULED\econ_data_sources_notes_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_elevation_statistics_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_energy_utilities_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_first_nation_band_popltn_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_fn_csds_clabs_bands_xref_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_hazrdous_waste_facilities_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_hazrdous_waste_haulers_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_labour_market_prjctns_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_labour_relations_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_labour_wages_prjctns_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_population_prjctns_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_school_enrollment_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_telecomm_utilities_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_unemplyment_prjctns_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\edrp_mpcm_stats_gemma_multi_xlsx_bcgw.fmw. reason: fileSize
+FMW missing in destination: BCGW_SCHEDULED\gsr_mental_hlth_substce_use_sv_bcdc_csv_bcgw.fmw.
+fmw not equal: BCGW_SCHEDULED\hsp_mjr_mines_permttd_areas_sp_multi_bcgw.fmw. reason: fileSize
+fmw not equal: GSR_SUPPORT\gsr_processMHSU_uploadToCatalogue.fmw. reason: fileSize
+{'start at': datetime.datetime(2021, 3, 17, 14, 17, 49, 646335)}
+{'start at': datetime.datetime(2021, 3, 17, 14, 19, 20, 368910)}
+fmw not equal: BCGW_SCHEDULED\econ_data_sources_notes_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_elevation_statistics_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_energy_utilities_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_first_nation_band_popltn_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_fn_csds_clabs_bands_xref_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_hazrdous_waste_facilities_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_hazrdous_waste_haulers_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_labour_market_prjctns_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_labour_relations_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_labour_wages_prjctns_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_population_prjctns_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_school_enrollment_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_telecomm_utilities_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_unemplyment_prjctns_staging_csv_bcgw.fmw. reason: fmw_properties
+{'start at': datetime.datetime(2021, 3, 17, 14, 23, 50, 654780)}
+fmw not equal: BCGW_SCHEDULED\econ_data_sources_notes_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_elevation_statistics_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_energy_utilities_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_first_nation_band_popltn_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_fn_csds_clabs_bands_xref_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_hazrdous_waste_facilities_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_hazrdous_waste_haulers_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_labour_market_prjctns_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_labour_relations_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_labour_wages_prjctns_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_population_prjctns_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_school_enrollment_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_telecomm_utilities_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_unemplyment_prjctns_staging_csv_bcgw.fmw. reason: fmw_properties
+{'start at': datetime.datetime(2021, 3, 17, 14, 24, 1, 778329)}
+fmw not equal: BCGW_SCHEDULED\econ_data_sources_notes_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_elevation_statistics_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_energy_utilities_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_first_nation_band_popltn_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_fn_csds_clabs_bands_xref_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_hazrdous_waste_facilities_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_hazrdous_waste_haulers_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_labour_market_prjctns_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_labour_relations_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_labour_wages_prjctns_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_population_prjctns_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_school_enrollment_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_telecomm_utilities_staging_csv_bcgw.fmw. reason: fmw_properties
+fmw not equal: BCGW_SCHEDULED\econ_unemplyment_prjctns_staging_csv_bcgw.fmw. reason: fmw_properties
