@@ -1,17 +1,23 @@
 {
-  "fmw_dir": "FMWs",
+  "output_dir": "output",
+  "fmw_dir": "fmw",
+  "resource_dir": "resource",
+  "max_file_size": 10000000,
   "repo_filter": {
     "BCGW_REP_OTHER": "0",
     "BCGW_CHILD": "0",
     "BCGW_REP_ON_REQUEST": "0",
     "BCGW_SCHEDULED": "1",
     "FWA_SUPPORT": "0",
-    "GSR_SUPPORT": "1",
+    "GSR_SUPPORT": "0",
     "KIRK": "0"
   },
   "fmw_filter": {
-    "on": true,
+    "on": false,
     "items": [
+      "BCGW_SCHEDULED\\sol_range_staging_gdb_idwprod1.fmw"
+      ],
+    "nouse": [
       "BCGW_SCHEDULED\\econ_data_sources_notes_staging_csv_bcgw.fmw",
       "BCGW_SCHEDULED\\econ_elevation_statistics_staging_csv_bcgw.fmw",
       "BCGW_SCHEDULED\\econ_energy_utilities_staging_csv_bcgw.fmw",
@@ -25,12 +31,7 @@
       "BCGW_SCHEDULED\\econ_population_prjctns_staging_csv_bcgw.fmw",
       "BCGW_SCHEDULED\\econ_school_enrollment_staging_csv_bcgw.fmw",
       "BCGW_SCHEDULED\\econ_telecomm_utilities_staging_csv_bcgw.fmw",
-      "BCGW_SCHEDULED\\econ_unemplyment_prjctns_staging_csv_bcgw.fmw",
-      "BCGW_SCHEDULED\\edrp_mpcm_stats_gemma_multi_xlsx_bcgw.fmw",
-      "BCGW_SCHEDULED\\gsr_mental_hlth_substce_use_sv_bcdc_csv_bcgw.fmw",
-      "BCGW_SCHEDULED\\hsp_mjr_mines_permttd_areas_sp_multi_bcgw.fmw",
-      "GSR_SUPPORT\\gsr_processMHSU_uploadToCatalogue.fmw"
+      "BCGW_SCHEDULED\\econ_unemplyment_prjctns_staging_csv_bcgw.fmw"
     ]
-  },
-  "overwrite": true
+  }
 }

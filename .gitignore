@@ -3,7 +3,7 @@
 lib/
 !lib\requirements.txt
 junk.py
-outputs
+output
 .idea/
 lib64/
 /source.repo.txt
