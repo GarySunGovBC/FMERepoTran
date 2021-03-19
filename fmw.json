@@ -1,0 +1,151 @@
+{
+  "fmw": {
+    "props": [
+      "name",
+      "description",
+      "repositoryName",
+      "title",
+      "type",
+      "fileSize",
+      "category",
+      "buildNumber",
+      "requirements",
+      "legalTermsConditions",
+      "usage"
+    ],
+    "sub_props": [
+      "datasets",
+      "parameters",
+      "properties",
+      "services"
+    ]
+  },
+  "fmw_datasets": {
+    "props": [],
+    "sub_props": [
+      "destination",
+      "source"
+    ],
+    "dir": true
+  },
+  "fmw_datasets_dir": {
+    "props": [],
+    "sub_props": []
+  },
+  "fmw_datasets_dir_item": {
+    "props": [
+      "name",
+      "format"
+    ],
+    "sub_props": [
+      "featuretypes",
+      "properties"
+    ]
+  },
+  "fmw_datasets_dir_item_featuretypes": {
+    "props": [],
+    "sub_props": []
+  },
+  "fmw_datasets_dir_item_featuretypes_item": {
+    "props": [
+      "name",
+      "description"
+    ],
+    "sub_props": [
+      "attributes",
+      "properties"
+    ]
+  },
+  "fmw_datasets_dir_item_featuretypes_item_attributes": {
+    "props": [],
+    "sub_props": []
+  },
+  "fmw_datasets_dir_item_featuretypes_item_attributes_item": {
+    "props": [
+      "name",
+      "width",
+      "type"
+    ],
+    "sub_props": []
+  },
+  "fmw_datasets_dir_item_featuretypes_item_properties": {
+    "props": [],
+    "sub_props": []
+  },
+  "fmw_datasets_dir_item_properties": {
+    "props": [],
+    "sub_props": []
+  },
+  "fmw_datasets_dir_item_properties_item": {
+    "props": [
+      "name",
+      "category",
+      "value"
+    ],
+    "sub_props": [
+      "attributes"
+    ]
+  },
+  "fmw_datasets_dir_item_properties_item_attributes": {
+    "props": [],
+    "sub_props": []
+  },
+  "fmw_parameters": {
+    "props": [],
+    "sub_props": []
+  },
+  "fmw_parameters_item": {
+    "props": [
+      "defaultValue",
+      "description",
+      "model",
+      "type"
+    ],
+    "sub_props": [
+      "listOptions"
+    ]
+  },
+  "fmw_parameters_item_listOptions": {
+    "props": [],
+    "sub_props": [],
+    "sort_on": "caption"
+  },
+  "fmw_parameters_item_listOptions_item": {
+    "props": [
+      "caption",
+      "value"
+    ],
+    "sub_props": []
+  },
+  "fmw_properties": {
+    "props": [],
+    "sub_props": []
+  },
+  "fmw_properties_item": {
+    "props": [
+      "name",
+      "category",
+      "value"
+    ],
+    "sub_props": [
+      "attributes"
+    ]
+  },
+  "fmw_services": {
+    "props": [],
+    "sub_props": []
+  },
+  "fmw_services_item": {
+    "props": [],
+    "sub_props": []
+  },
+  "fmw_resources": {
+    "props": [],
+    "sub_props": []
+  },
+  "fmw_resources_item": {
+    "props": [],
+    "sub_props": []
+  }
+}
+

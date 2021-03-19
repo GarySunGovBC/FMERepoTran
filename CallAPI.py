@@ -5,20 +5,21 @@ import json
 from ApiException import APIException
 
 
-class CallAPI(object):
+class CallAPI:
 
-    def __init__(self, app_config, server, token):
-        self.app_config = app_config
+    def __init__(self, api_config, server, token, log):
+        self.api_config = api_config
         self.server = server
         self.token = token
+        self.log = log
         self.http_method = "GET"
 
     def execute_api(self, url, headers, body):
         pass
 
     def populate_url(self, method, url_params):
-        root = self.app_config["api_root"] % self.app_config[self.server]
-        url = self.app_config[method]
+        root = self.api_config["api_root"] % self.server
+        url = self.api_config[method]
         if url_params:
             url = url % tuple(url_params)
         if "token=" in url:
@@ -30,8 +31,8 @@ class CallAPI(object):
         result = {"response": response}
         if response.text:
             text = response.text.strip()
-            if text and text.startswith("{"):
-                result["text"] = json.loads(response.text)
+            if text and (text.startswith("{") or text.startswith("[")):
+                result["text"] = json.loads(text)
         return result
 
     def api_call_success(self, response, return_codes):
