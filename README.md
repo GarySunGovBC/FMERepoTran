@@ -7,9 +7,16 @@
   - copy: copy repositories
   - compare: compare repositories
 
-app.jon
-  const definetion for the application.
-  
+# Configuration
+- app.json
+  - network, application
+- job.json  
+  - filters, work folders 
+- fmw.json
+  - FMW props for comparing- 
+- repo.json
+  - repo props for comparing
+  - 
 CallAPI.py
   The interal Python class calls FME Server API using request.
   
