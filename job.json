@@ -4,13 +4,13 @@
   "resource_dir": "resource",
   "max_file_size": 10000000,
   "repo_filter": {
-    "BCGW_REP_OTHER": "0",
-    "BCGW_CHILD": "0",
-    "BCGW_REP_ON_REQUEST": "0",
+    "BCGW_REP_OTHER": "1",
+    "BCGW_CHILD": "1",
+    "BCGW_REP_ON_REQUEST": "1",
     "BCGW_SCHEDULED": "1",
-    "FWA_SUPPORT": "0",
-    "GSR_SUPPORT": "0",
-    "KIRK": "0"
+    "FWA_SUPPORT": "1",
+    "GSR_SUPPORT": "1",
+    "KIRK": "1"
   },
   "fmw_filter": {
     "on": false,

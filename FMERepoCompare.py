@@ -1,6 +1,7 @@
 from ApiException import APIException
 from FMEServerJob import FMEServerJob
 from FMWCompare import FMWCompare
+from RepoCompare import RepoCompare
 
 
 class FMERepositoryCompare(FMEServerJob):
@@ -23,7 +24,14 @@ class FMERepositoryCompare(FMEServerJob):
         except APIException as e:
             raise APIException("fmw not equal: %s. reason: %s" % (full_name, e.error["message"]))
 
-    def do_repo_job(self, repo):
-        repo_name = repo["name"]
-        if not self.dest_job.repo_exists(repo_name):
-            raise APIException("Repository missing in destination: %s." % repo_name)
+    def do_repo_job(self, src_repo, dest_repos):
+        repo_name = src_repo["name"]
+        try:
+            if not dest_repos:
+                raise APIException("Repository missing in destination: %s." % repo_name)
+            repo_compare = RepoCompare(src_repo, dest_repos)
+            repo_compare.compare()
+            return True
+        except APIException as e:
+            self.log.write_line("Repository not equal: %s. reason: %s" % (repo_name, e.error["message"]))
+            return False

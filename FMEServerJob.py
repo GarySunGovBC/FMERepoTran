@@ -21,28 +21,28 @@ class FMEServerJob:
         self.src_job = FMEServerAPIJob(app_config, secrect_config, "source", self.job_config["output_dir"], log)
         self.dest_job = FMEServerAPIJob(app_config, secrect_config, "dest", self.job_config["output_dir"], log)
 
-    def do_repo_job(self, repo):
+    def do_repo_job(self, src_repo, dest_repos):
         pass
 
     def do_fmw_job(self, repo, fmw):
         pass
 
     def execute(self):
-        try:
-            self.log.write_line({"start at": datetime.now()})
-            source_repos = self.src_job.list_repos()
-            for repo in source_repos:
-                repo_name = repo["name"]
-                if repo_name not in self.job_config["repo_filter"].keys():
-                    continue
-                if self.job_config["repo_filter"][repo_name] != "1":
-                    continue
-                self.do_repo_job(repo)
-                fmw_list = self.src_job.list_repo_fmws(repo_name)
-                for fmw in fmw_list:
-                    try:
-                        self.do_fmw_job(repo, fmw)
-                    except APIException as e:
-                        self.log.write_line(e.error["message"])
-        except APIException as e:
-            self.log.write_line(e.error["message"])
+        self.log.write_line({"start at": datetime.now()})
+        source_repos = self.src_job.list_repos()
+        dest_repos = self.dest_job.list_repos()
+        for repo in source_repos:
+            repo_name = repo["name"]
+            if repo_name not in self.job_config["repo_filter"].keys():
+                continue
+            if self.job_config["repo_filter"][repo_name] != "1":
+                continue
+            dest_repo = next((r for r in dest_repos if r["name"] == repo_name), None)
+            if not self.do_repo_job(repo, dest_repo):
+                continue
+            fmw_list = self.src_job.list_repo_fmws(repo_name)
+            for fmw in fmw_list:
+                try:
+                    self.do_fmw_job(repo, fmw)
+                except APIException as e:
+                    self.log.write_line(e.error["message"])

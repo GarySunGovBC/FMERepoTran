@@ -17,7 +17,8 @@
       "datasets",
       "parameters",
       "properties",
-      "services"
+      "services",
+      "resources"
     ]
   },
   "fmw_datasets": {
@@ -144,7 +145,11 @@
     "sub_props": []
   },
   "fmw_resources_item": {
-    "props": [],
+    "props": [
+      "size",
+      "name",
+      "description"
+    ],
     "sub_props": []
   }
 }

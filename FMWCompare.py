@@ -1,5 +1,6 @@
 import json
 from ApiException import APIException
+from ObjectCompare import ObjectCompare
 
 
 class FMWCompare:
@@ -24,18 +25,10 @@ class FMWCompare:
                 if obj1[prop] != obj2[prop]:
                     raise APIException(prop)
 
-    @staticmethod
-    def get_name(objects):
-        return objects['name']
-
-    @staticmethod
-    def get_caption(objects):
-        return objects['caption']
-
     def props_equal(self, objects, prop_name):
         """ compare 2 objects, stored in objects, objects[0] and objects[1] """
         # compare objects, name defined in "props"
-        FMWCompare.object_equal(objects, self.fmw_config[prop_name]["props"])
+        ObjectCompare.object_equal(objects, self.fmw_config[prop_name]["props"])
         # if the single object is list
         if isinstance(objects[0], list):
             if len(objects[0]) != len(objects[1]):
@@ -48,11 +41,11 @@ class FMWCompare:
             sorted_objects1 = None
             sorted_objects2 = None
             if sort_on == "name":
-                sorted_objects1 = sorted(objects[0], key=FMWCompare.get_name)
-                sorted_objects2 = sorted(objects[1], key=FMWCompare.get_name)
+                sorted_objects1 = sorted(objects[0], key=ObjectCompare.get_name)
+                sorted_objects2 = sorted(objects[1], key=ObjectCompare.get_name)
             if sort_on == "caption":
-                sorted_objects1 = sorted(objects[0], key=FMWCompare.get_caption)
-                sorted_objects2 = sorted(objects[1], key=FMWCompare.get_caption)
+                sorted_objects1 = sorted(objects[0], key=ObjectCompare.get_caption)
+                sorted_objects2 = sorted(objects[1], key=ObjectCompare.get_caption)
             # compare each
             for i in range(0, len(sorted_objects1)):
                 obj1 = sorted_objects1[i]
@@ -79,7 +72,8 @@ class FMWCompare:
                 if not is_dir:
                     prop_key = "%s_%s" % (prop_name, sub_prop)
                 self.props_equal([sub_obj1, sub_obj2], prop_key)
-#compare resoure
+
+    # compare resoure
     def compare(self):
         """ compare 2 fmw, entry point is 'fmw' """
         self.props_equal([self.fmw1, self.fmw2], "fmw")

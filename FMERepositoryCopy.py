@@ -40,9 +40,9 @@ class FMERepositoryCopy(FMEServerJob):
         for resource in resources:
             self.copy_resource(repo_name, fmw_name, resource)
 
-    def do_repo_job(self, repo):
-        self.dest_job.create_repo(repo)
-        repo_name = repo["name"]
-        fmw_list = self.src_job.list_repo_fmws(repo_name)
-        for fmw in fmw_list:
-            self.copy_fmw(repo_name, fmw)
+    def do_repo_job(self, src_repo, dest_repos):
+        self.dest_job.create_repo(src_repo)
+        # repo_name = repo["name"]
+        # fmw_list = self.src_job.list_repo_fmws(repo_name)
+        # for fmw in fmw_list:
+        #     self.copy_fmw(repo_name, fmw)
