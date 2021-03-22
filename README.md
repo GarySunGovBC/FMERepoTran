@@ -1,5 +1,11 @@
 # FMERepoTran
-Development utility tool to transfer Repositories between FME Servers.
+- Development utility tool to transfer Repositories between FME Servers.
+
+# Run Environment
+- Python version is v3.8 or above
+- Python.exe main.py [arg]
+  - copy: copy repositories
+  - compare: compare repositories
 
 app.jon
   const definetion for the application.
