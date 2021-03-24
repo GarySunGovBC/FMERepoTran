@@ -17,3 +17,6 @@
 - repo.json
   - repo props for comparing
 
+# Test
+- python.exe test.py
+- Expected result: "Passed!"
