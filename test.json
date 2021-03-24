@@ -1,0 +1,26 @@
+{
+  "source_fme_server": "ascella.dmz",
+  "dest_fme_server": "gienah.dmz",
+  "overwrite_repo": true,
+  "overwrite_fmw": true,
+  "output_dir": "output",
+  "fmw_dir": "fmw",
+  "resource_dir": "resource",
+  "max_file_size": 10000000,
+  "repo_filter": {
+    "BCGW_SCHEDULED": "1"
+  },
+  "fmw_filter": {
+    "on": true,
+    "items": [
+      "BCGW_SCHEDULED\\econ_data_sources_notes_staging_csv_bcgw.fmw",
+      "BCGW_SCHEDULED\\econ_elevation_statistics_staging_csv_bcgw.fmw",
+      "BCGW_SCHEDULED\\econ_community_ref_points_staging_csv_bcgw.fmw"
+    ]
+  },
+  "repo_replace": [
+    {
+      "BCGW_SCHEDULED": "GARY_TEST_REPO"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "repo": {
+    "props": [
+      "name",
+      "description",
+      "sharable"
+    ],
+    "sub_props": [
+    ]
+  }
+}
+
