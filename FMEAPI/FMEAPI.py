@@ -1,10 +1,9 @@
 import json
 import os
-
-from ApiException import APIException
-from CallAPIDelete import CallAPIDELETE
-from CallAPIGet import CallAPIGET
-from CallAPIPost import CallAPIPOST
+from FMEAPI.CallAPIGet import CallAPIGET
+from FMEAPI.CallAPIPost import CallAPIPOST
+from FMEAPI.ApiException import APIException
+from FMEAPI.CallAPIDelete import CallAPIDELETE
 
 
 class FmeApis:

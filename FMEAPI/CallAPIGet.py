@@ -1,5 +1,5 @@
 import requests
-from CallAPI import CallAPI
+from FMEAPI.CallAPI import CallAPI
 
 
 class CallAPIGET(CallAPI):

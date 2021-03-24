@@ -2,7 +2,7 @@ import os
 import requests
 import json
 
-from ApiException import APIException
+from FMEAPI.ApiException import APIException
 
 
 class CallAPI:

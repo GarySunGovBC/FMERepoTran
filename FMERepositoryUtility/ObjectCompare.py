@@ -1,4 +1,4 @@
-from ApiException import APIException
+from FMEAPI.ApiException import APIException
 
 
 class ObjectCompare:

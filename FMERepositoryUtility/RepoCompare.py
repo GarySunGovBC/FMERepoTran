@@ -1,6 +1,5 @@
 import json
-from ApiException import APIException
-from ObjectCompare import ObjectCompare
+from FMERepositoryUtility.ObjectCompare import ObjectCompare
 
 
 class RepoCompare:

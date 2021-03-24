@@ -1,4 +1,8 @@
 {
+  "source_fme_server": "ascella.dmz",
+  "dest_fme_server": "gienah.dmz",
+  "overwrite_repo": false,
+  "overwrite_fmw": true,
   "output_dir": "output",
   "fmw_dir": "fmw",
   "resource_dir": "resource",
@@ -12,26 +16,14 @@
     "GSR_SUPPORT": "1",
     "KIRK": "1"
   },
+  "repo_replace": [
+    {
+    }
+  ],
   "fmw_filter": {
     "on": false,
     "items": [
       "BCGW_SCHEDULED\\sol_range_staging_gdb_idwprod1.fmw"
-      ],
-    "nouse": [
-      "BCGW_SCHEDULED\\econ_data_sources_notes_staging_csv_bcgw.fmw",
-      "BCGW_SCHEDULED\\econ_elevation_statistics_staging_csv_bcgw.fmw",
-      "BCGW_SCHEDULED\\econ_energy_utilities_staging_csv_bcgw.fmw",
-      "BCGW_SCHEDULED\\econ_first_nation_band_popltn_staging_csv_bcgw.fmw",
-      "BCGW_SCHEDULED\\econ_fn_csds_clabs_bands_xref_staging_csv_bcgw.fmw",
-      "BCGW_SCHEDULED\\econ_hazrdous_waste_facilities_staging_csv_bcgw.fmw",
-      "BCGW_SCHEDULED\\econ_hazrdous_waste_haulers_staging_csv_bcgw.fmw",
-      "BCGW_SCHEDULED\\econ_labour_market_prjctns_staging_csv_bcgw.fmw",
-      "BCGW_SCHEDULED\\econ_labour_relations_staging_csv_bcgw.fmw",
-      "BCGW_SCHEDULED\\econ_labour_wages_prjctns_staging_csv_bcgw.fmw",
-      "BCGW_SCHEDULED\\econ_population_prjctns_staging_csv_bcgw.fmw",
-      "BCGW_SCHEDULED\\econ_school_enrollment_staging_csv_bcgw.fmw",
-      "BCGW_SCHEDULED\\econ_telecomm_utilities_staging_csv_bcgw.fmw",
-      "BCGW_SCHEDULED\\econ_unemplyment_prjctns_staging_csv_bcgw.fmw"
     ]
   }
 }
