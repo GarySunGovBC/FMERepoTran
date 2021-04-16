@@ -23,7 +23,7 @@ try:
     # test_log.test()
     test_copy = FMERepositoryCopy(app_config, secrect_config, job_config, test_log)
     test_compare = FMERepositoryCompare(app_config, secrect_config, job_config, test_log)
-    test_copy.execute()
+    #test_copy.execute()
     test_compare.execute()
     print("Passed!")
 except Exception as e:
