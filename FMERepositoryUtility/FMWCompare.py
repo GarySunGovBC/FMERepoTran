@@ -34,7 +34,7 @@ class FMWCompare:
             if len(objects[0]) != len(objects[1]):
                 raise APIException(prop_name)
             # sort ths list before comparing
-            # sort object list base on a field
+            # sort object list base on a fieldy
             sort_on = "name"
             if "sort_on" in self.fmw_config[prop_name].keys():
                 sort_on = self.fmw_config[prop_name]["sort_on"]
