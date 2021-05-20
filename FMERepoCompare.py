@@ -1,7 +1,7 @@
 from FMEAPI.ApiException import APIException
-from FMERepositoryUtility.FMEServerJob import FMEServerJob
 from FMERepositoryUtility.FMWCompare import FMWCompare
 from FMERepositoryUtility.RepoCompare import RepoCompare
+from FMEServerJob import FMEServerJob
 
 
 class FMERepositoryCompare(FMEServerJob):
@@ -9,13 +9,13 @@ class FMERepositoryCompare(FMEServerJob):
     def do_fmw_job(self, repo, dest_repo_name, fmw):
         repo_name = repo["name"]
         fmw_name = fmw["name"]
-        full_name = "%s\%s" % (repo_name, fmw_name)
+        full_name = "%s\\%s" % (repo_name, fmw_name)
         if self.job_config["fmw_filter"]["on"]:
             if full_name not in self.job_config["fmw_filter"]["items"]:
                 return
         self.log.write_line("Comaring %s ..." % full_name)
         if not self.dest_job.fmw_exists(repo_name, fmw_name):
-            raise APIException("FMW missing in destination: %s\%s." % (repo_name, fmw_name))
+            raise APIException("FMW missing in destination: %s\\%s." % (repo_name, fmw_name))
         src_fmw = self.src_job.get_repo_fmw(repo_name, fmw_name)
         dest_fmw = self.dest_job.get_repo_fmw(repo_name, fmw_name)
         fmw_compare = FMWCompare(src_fmw, dest_fmw)

@@ -1,3 +1,4 @@
 {
-  "run_mode": "debug"
+  "run_mode": "debug",
+  "log_dir": "output"
 }

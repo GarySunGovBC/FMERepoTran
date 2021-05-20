@@ -23,7 +23,7 @@ class FMERepositoryCopy(FMEServerJob):
     def do_fmw_job(self, repo, dest_repo_name, fmw):
         src_repo_name = repo["name"]
         fmw_name = fmw["name"]
-        full_name = "%s\%s" % (src_repo_name, fmw_name)
+        full_name = "%s\\%s" % (src_repo_name, fmw_name)
         if self.job_config["fmw_filter"]["on"]:
             if full_name not in self.job_config["fmw_filter"]["items"]:
                 return
