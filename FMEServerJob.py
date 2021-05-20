@@ -1,19 +1,31 @@
+import json
+import os
 from datetime import datetime
 from FMEAPI.ApiException import APIException
 from FMERepositoryUtility.FMEServerAPIJob import FMEServerAPIJob
+from FileLogger.Logger import AppLogger
 
 
 class FMEServerJob:
 
-    def __init__(self, app_config, secrect_config, job_config, log):
-        self.debug = app_config["run_mode"] == "debug"
-        self.job_config = job_config
-        self.log = log
+    def __init__(self, app_config_name, secret_config_name, job_config_name):
+        self.secret_config_name = secret_config_name
+        self.job_config_name = job_config_name
+        with open(app_config_name) as app_config_json:
+            self.app_config = json.load(app_config_json)
+        with open(secret_config_name) as secret_config_json:
+            self.secret_config = json.load(secret_config_json)
+        with open(job_config_name) as job_config_json:
+            self.job_config = json.load(job_config_json)
+        self.debug = self.app_config["run_mode"] == "debug"
+        self.log = AppLogger(os.path.join(self.app_config["log_dir"], "log.txt"), True, True)
         self.fmw_dir = self.job_config["fmw_dir"]
         self.max_file_size = self.job_config["max_file_size"]
         self.resource_dir = self.job_config["resource_dir"]
-        self.src_job = FMEServerAPIJob(job_config, secrect_config, "source", self.job_config["output_dir"], log)
-        self.dest_job = FMEServerAPIJob(job_config, secrect_config, "dest", self.job_config["output_dir"], log)
+        self.src_job = FMEServerAPIJob(secret_config_name, job_config_name, self.job_config["source_fme_server"],
+                                       self.secret_config["source_token"])
+        self.dest_job = FMEServerAPIJob(secret_config_name, job_config_name, self.job_config["dest_fme_server"],
+                                        self.secret_config["dest_token"])
         self.overwrite_repo = self.job_config["overwrite_repo"]
         self.overwrite_fmw = self.job_config["overwrite_fmw"]
 
